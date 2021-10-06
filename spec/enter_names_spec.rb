@@ -5,6 +5,8 @@ feature 'Enters names' do
     fill_in :player_2_name, with: 'Matt'
     click_button 'Submit'
 
+    save_and_open_page
+
     expect(page).to have_content 'Charlie vs. Matt'
   end
 end
