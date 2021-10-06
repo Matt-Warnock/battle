@@ -1,4 +1,4 @@
-# frozen_litrial_string: true
+# frozen_string_literal: true
 
 require 'sinatra/base'
 require 'sinatra/reloader'
@@ -9,7 +9,14 @@ class Battle < Sinatra::Base
   end
 
   get '/' do
-    'Testing infrastructure working!'
+    erb :index
+  end
+
+  post '/names' do
+    @player_one = params['player_1_name']
+    @player_two = params['player_2_name']
+
+    erb :play
   end
 
   run! if app_file == $0
