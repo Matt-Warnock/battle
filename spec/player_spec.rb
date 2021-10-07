@@ -28,13 +28,4 @@ RSpec.describe Player do
       expect { player.receive_damage }.to change { player.hit_points }.by(-10)
     end
   end
-
-  describe '#attack' do
-    it 'damages the second player passed into it' do
-      second_player = Player.new('player_two')
-
-      expect(second_player).to receive(:receive_damage)
-      player.attack(second_player)
-    end
-  end
 end
