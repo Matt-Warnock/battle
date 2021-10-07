@@ -2,8 +2,8 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
-require 'player'
-require 'game'
+require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
   configure :development do
