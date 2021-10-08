@@ -25,4 +25,23 @@ RSpec.describe Game do
       game.attack(player_one)
     end
   end
+
+  describe '#current turn' do
+    it "starts off as player 1" do
+      expect(game.current_turn).to eq player_one
+    end
+  end 
+
+  describe '#switch_turns' do 
+    it 'switches from player 1 to player 2' do
+      game.switch_turns 
+      expect(game.current_turn).to eq player_two
+    end
+
+    it 'switches from player 2 to player 1' do
+      game.switch_turns 
+      game.switch_turns 
+      expect(game.current_turn).to eq player_one
+    end
+  end 
 end

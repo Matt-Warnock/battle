@@ -32,9 +32,8 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = session[:game]
-
     @game.attack(@game.player_two)
-
+    @game.switch_turns
     erb :attack
   end
 
