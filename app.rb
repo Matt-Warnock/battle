@@ -20,13 +20,11 @@ class Battle < Sinatra::Base
     player_one = Player.new(params['player_1_name'])
     player_two = Player.new(params['player_2_name'])
     session[:game] = Game.new(player_one, player_two)
-
     redirect '/play'
   end
 
   get '/play' do
     @game = session[:game]
-
     erb :play
   end
 
